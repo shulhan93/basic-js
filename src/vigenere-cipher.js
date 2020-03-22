@@ -11,10 +11,9 @@ class VigenereCipheringMachine {
         if (!(text && word)) {
             throw new Error('Error')
         }
-
         let str = text.toUpperCase()
         let key = word.toUpperCase()
-        let reg = str.match(/[A-Z]/g).join('');
+        let reg = str || str.match(/[A-Z]/g).join('');
         let res = '';
         let keyConkat = key.repeat(reg.length / key.length) + key.slice(0, reg.length % key.length)
         let count = 0;
@@ -38,7 +37,7 @@ class VigenereCipheringMachine {
         }
         let str = text.toUpperCase()
         let key = word.toUpperCase()
-        let reg = str.match(/[A-Z]/g).join('')
+        let reg = str || str.match(/[A-Z]/g).join('')
         let res = '';
         let keyConkat = key.repeat(reg.length / key.length) + key.slice(0, reg.length % key.length)
         let count = 0;
